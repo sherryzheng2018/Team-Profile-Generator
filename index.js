@@ -1,9 +1,10 @@
-const generateTeam = require("./generateHtml");
 const fs = require('fs');
-const Manager = require('../lib/Manager')
 const inquirer = require('inquirer');
-const Engineer = require("../lib/Engineer");
-const Intern = require("../lib/Intern");
+
+const generateTeam = require("./util/generateHtml");
+const Manager = require('./lib/Manager')
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 // const manager1 = new Manager('Monica Geller', '1', 'monica@friends.com', '001');
 let team = [];
@@ -30,7 +31,13 @@ function buildTeam() {
 
             default:
                 console.log("All done!")
-                fs.writeFile("index.html", generateTeam(team), (err) =>
+                const outputdir = './output';
+
+                if (!fs.existsSync(outputdir)){
+                    fs.mkdirSync(outputdir);
+                }
+
+                fs.writeFile("./output/index.html", generateTeam(team), (err) =>
                     err ? console.log(err) : console.log('Success!')
                 );
                 break;
