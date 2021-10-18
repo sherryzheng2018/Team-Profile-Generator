@@ -5,6 +5,9 @@
 
 This is a Node.js command-line application to generate a team profile page of a software engineer team. It will generate HTML webpage that displays summaries for each person. Styling with bootstrap.
 
+App demo link: https://watch.screencastify.com/v/Fvh0rB0oFXYY5yjtIRZr
+
+Sample html page generated: https://github.com/sherryzheng2018/Team-Profile-Generator/blob/main/sample.html
 
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
